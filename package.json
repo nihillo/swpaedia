@@ -46,7 +46,7 @@
     "typescript": "~2.0.3"
   },
   "scripts": {
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --prod",
     "start": "node server.js"
   },
     "engines": {
