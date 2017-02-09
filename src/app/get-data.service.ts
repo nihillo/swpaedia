@@ -19,6 +19,7 @@ export class GetDataService {
   	const url = this.API_URL + resource;
 
   	return this.ajax.
-  		get(url).map( response => response.json());
+  		get(url)
+      .map( response => response.json());
   }
 }

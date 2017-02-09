@@ -1,5 +1,5 @@
 export const app_config = {
-  API_URL: 'https://swpaedia-api.herokuapp.com'
-  // API_URL: 'http://localhost:8000'
-  // API_URL: 'https://swapi.co/api'
+  API_URL: 'https://swpaedia-api.herokuapp.com',
+  FALLBACK_IMG: '/assets/images/no-image.jpg',
+  SPINNER: '/assets/images/atst_walk2.gif'
 };

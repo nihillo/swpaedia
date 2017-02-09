@@ -1,0 +1,10 @@
+<!-- <div class="container"> -->
+	<app-breadcrumbs [path]="'Home/Films'"></app-breadcrumbs>
+	<div class="container">
+		<div class="row">
+			<div *ngFor="let element of elements" class="col s12 m6 l3">
+			  	<app-card [image]="element.image" [title]="element.title || element.name" [link]="element.url"></app-card>
+			</div>
+		</div>
+	</div>
+<!-- </div> -->

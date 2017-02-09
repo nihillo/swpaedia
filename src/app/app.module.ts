@@ -8,12 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { CharactersComponent } from './characters/characters.component';
-import { PlanetsComponent } from './planets/planets.component';
-import { FilmsComponent } from './films/films.component';
-import { SpeciesComponent } from './species/species.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
-import { StarshipsComponent } from './starships/starships.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
@@ -21,22 +15,26 @@ import { SpeciesDetailComponent } from './species-detail/species-detail.componen
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { StarshipDetailComponent } from './starship-detail/starship-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CardComponent } from './card/card.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { MasterComponent } from './master/master.component';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'characters', component: CharactersComponent},
-  {path: 'characters/:id', component: CharacterDetailComponent},
-  {path: 'planets', component: PlanetsComponent},
-  {path: 'planets/:id', component: PlanetDetailComponent},
-  {path: 'films', component: FilmsComponent},
-  {path: 'films/:id', component: FilmDetailComponent},
-  {path: 'species', component: SpeciesComponent},
-  {path: 'species/:id', component: SpeciesDetailComponent},
-  {path: 'vehicles', component: VehiclesComponent},
-  {path: 'vehicles/:id', component: VehicleDetailComponent},
-  {path: 'starships', component: StarshipsComponent},
-  {path: 'starships/:id', component: StarshipDetailComponent},
+  {path: 'characters', component: MasterComponent},
+  {path: 'characters/id/:id', component: CharacterDetailComponent},
+  {path: 'planets', component: MasterComponent},
+  {path: 'planets/id/:id', component: PlanetDetailComponent},
+  {path: 'films', component: MasterComponent},
+  {path: 'films/id/:id', component: FilmDetailComponent},
+  {path: 'species', component: MasterComponent},
+  {path: 'species/id/:id', component: SpeciesDetailComponent},
+  {path: 'vehicles', component: MasterComponent},
+  {path: 'vehicles/id/:id', component: VehicleDetailComponent},
+  {path: 'starships', component: MasterComponent},
+  {path: 'starships/id/:id', component: StarshipDetailComponent},
   {path: '**', component: NotFoundComponent}
 
 ];
@@ -48,19 +46,18 @@ export const routing = RouterModule.forRoot(routes);
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CharactersComponent,
-    PlanetsComponent,
-    FilmsComponent,
-    SpeciesComponent,
-    VehiclesComponent,
-    StarshipsComponent,
     CharacterDetailComponent,
     PlanetDetailComponent,
     FilmDetailComponent,
     SpeciesDetailComponent,
     VehicleDetailComponent,
     StarshipDetailComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CardComponent,
+    BreadcrumbsComponent,
+    MasterComponent,
+    PreloaderComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,
