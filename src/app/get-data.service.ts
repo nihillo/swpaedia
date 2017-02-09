@@ -8,7 +8,8 @@ import {Observable, Subject} from 'rxjs/Rx';
 export class GetDataService {
   private API_URL = app_config.API_URL;
 
-  constructor(private ajax: Http) {}
+  constructor(private ajax: Http) {
+  }
 
   public getData(resource: String): Observable<any> {
 

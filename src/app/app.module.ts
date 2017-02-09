@@ -19,6 +19,8 @@ import { CardComponent } from './card/card.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { MasterComponent } from './master/master.component';
 import { PreloaderComponent } from './preloader/preloader.component';
+import { CapitalizePipe } from './capitalize.pipe';
+import { SearchPipe } from './search.pipe';
 
 
 const routes: Routes = [
@@ -57,7 +59,9 @@ export const routing = RouterModule.forRoot(routes);
     BreadcrumbsComponent,
     MasterComponent,
     PreloaderComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    CapitalizePipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

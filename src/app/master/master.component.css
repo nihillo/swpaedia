@@ -1,3 +1,21 @@
-.container {
+.container-main {
 	margin-top: 45px;
+	min-height: 100vh;
+}
+
+.mg-top {
+	margin-top: 45px;
+}
+
+.mg-bottom {
+	margin-bottom: 45px;
+}
+
+.end-icon img {
+	width: 60px;
+	height: 60px;
+}
+
+input::placeholder {
+	color: white;
 }
