@@ -1,3 +1,37 @@
-<p>
-  starship-detail works!
-</p>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<div class="row" *ngIf="!loading">
+        <div class="col s12 m5">
+        	<img *ngIf="data.image!='/images/no-image.png'" class="z-depth-5" src="{{data.image}}" alt="{{data.name}}">
+        </div> 
+        <div class="col s12 m7">
+        	<header>
+				<h1>{{data.name}}</h1>
+        	</header>
+			<ul class="collection">
+			  <li class="collection-item"><b>Model:</b> {{data.model | capitalize}}</li>
+			  <li class="collection-item"><b>Manufacturer:</b> {{data.manufacturer | capitalize}}</li>
+		      <li class="collection-item"><b>Cost (credits):</b> {{data.cost_in_credits}}</li>
+		      <li class="collection-item"><b>Length:</b> {{data.length | capitalize}}</li>
+		      <li class="collection-item"><b>Max atmosphering speed:</b> {{data.max_atmosphering_speed | capitalize}}</li>
+		      <li class="collection-item"><b>Crew:</b> {{data.crew | capitalize}}</li>
+		      <li class="collection-item"><b>Passengers:</b> {{data.passengers | capitalize}}</li>
+		      <li class="collection-item"><b>Cargo capacity:</b> {{data.cargo_capacity | capitalize}}</li>
+		      <li class="collection-item"><b>Consumables:</b> {{data.consumables | capitalize}}</li>
+		      <li class="collection-item"><b>Hyperdrive rating:</b> {{data.hyperdrive_rating | capitalize}}</li>
+		      <li class="collection-item"><b>MGLT:</b> {{data.MGLT | capitalize}}</li>
+		      <li class="collection-item"><b>Starship class:</b> {{data.starship_class | capitalize}}</li>
+		     
+		    </ul>
+		    <ul class="collection with-header" *ngIf="data.pilots.length!==0">
+				<li class="collection-header"><h6>Pilots</h6></li>
+				<li class="collection-item" *ngFor="let character of data.pilots"><a [routerLink]="character.url">{{character.name}}</a></li>
+		    </ul>
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Films</h6></li>
+				<li class="collection-item" *ngFor="let film of data.films"><a [routerLink]="film.url">{{film.title}}</a></li>
+		    </ul>
+        </div>
+    </div>
+	<app-preloader *ngIf="loading"></app-preloader>
+</div>

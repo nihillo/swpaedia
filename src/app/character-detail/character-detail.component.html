@@ -1,3 +1,40 @@
-<p>
-  character-detail works!
-</p>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<div class="row" *ngIf="!loading">
+        <div class="col s12 m5">
+        	<img *ngIf="data.image!='/images/no-image.png'" class="z-depth-5" src="{{data.image}}" alt="{{data.name}}">
+        </div> 
+        <div class="col s12 m7">
+        	<header>
+				<h1>{{data.name}}</h1>
+        	</header>
+			<ul class="collection">
+			  <li class="collection-item"><b>Gender:</b> {{data.gender | capitalize}}</li>
+			  <li class="collection-item"><b>Birth year:</b> {{data.birth_year}}</li>
+			  <li class="collection-item"><b>Homeworld:</b> <a [routerLink]="data.homeworld.url">{{data.homeworld.name | capitalize}}</a></li>
+			  <li class="collection-item"><b>Species:</b> <a [routerLink]="data.species.url">{{data.species.name | capitalize}}</a></li>
+		      <li class="collection-item"><b>Height:</b> {{data.height}}</li>
+		      <li class="collection-item"><b>Mass:</b> {{data.mass}}</li>
+		      <li class="collection-item"><b>Hair color:</b> {{data.hair_color | capitalize}}</li>
+		      <li class="collection-item"><b>Skin color:</b> {{data.skin_color | capitalize}}</li>
+		      <li class="collection-item"><b>Eye color:</b> {{data.eye_color | capitalize}}</li>
+		    </ul>
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Films</h6></li>
+				<li class="collection-item" *ngFor="let film of data.films"><a [routerLink]="film.url">{{film.title}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header" *ngIf="data.starships.length!==0">
+				<li class="collection-header"><h6>Starships</h6></li>
+				<li class="collection-item" *ngFor="let starship of data.starships"><a [routerLink]="starship.url">{{starship.name}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header" *ngIf="data.vehicles.length!==0">
+				<li class="collection-header"><h6>Vehicles</h6></li>
+				<li class="collection-item" *ngFor="let vehicle of data.vehicles"><a [routerLink]="vehicle.url">{{vehicle.name}}</a></li>
+		    </ul>
+
+        </div>
+    </div>
+	<app-preloader *ngIf="loading"></app-preloader>
+</div>

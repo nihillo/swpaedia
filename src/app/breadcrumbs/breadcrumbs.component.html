@@ -1,7 +1,7 @@
 <nav>
 	<div class="nav-wrapper container">
 	  <div class="col s12">
-	  	<a class="breadcrumb" *ngFor="let breadcrumb of breadcrumbs" [routerLink]="[breadcrumb.url]">{{breadcrumb.name}}</a>
+	  	<a class="breadcrumb" *ngFor="let breadcrumb of breadcrumbs" [routerLink]="[breadcrumb.url]">{{breadcrumb.name | uppercase}}</a>
 	  </div>
 	</div>
 </nav>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
+import { BreadcrumbsService } from '../breadcrumbs.service';
 import { app_config } from '../../appconfig';
 import { Router } from '@angular/router';
 import {SearchPipe} from '../search.pipe';
@@ -8,7 +9,7 @@ import {SearchPipe} from '../search.pipe';
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css'],
-  providers: [GetDataService, SearchPipe]
+  providers: [GetDataService, SearchPipe, BreadcrumbsService]
 })
 export class MasterComponent implements OnInit {
   private router: any;
@@ -27,7 +28,8 @@ export class MasterComponent implements OnInit {
   constructor(
     private data: GetDataService,
     private _router: Router,
-    private applyFilter: SearchPipe
+    private applyFilter: SearchPipe,
+    private breadcrumbsHandler: BreadcrumbsService
    ) {
     this.router = _router;
     this.loading = true;
@@ -69,6 +71,13 @@ export class MasterComponent implements OnInit {
         }
 
         data.results.forEach(item => {
+
+          const itemPath = item.url.split('/');
+          if (itemPath[1] === 'people') {
+            itemPath[1] = 'characters';
+          }
+          item.url = itemPath.join('/');
+
           this.elements.push(item);
         });
 
@@ -85,6 +94,7 @@ export class MasterComponent implements OnInit {
         }
 
         this.elements = this.applyFilter.transform(this.elements, '');
+
       }
     );
   }
@@ -94,5 +104,10 @@ export class MasterComponent implements OnInit {
     // for (let i = 0; i < 2; i++) {
       this.getData();
     // }
+  }
+
+
+  cleanSearch() {
+    this.filter = '';
   }
 }

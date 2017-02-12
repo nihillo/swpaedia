@@ -1,3 +1,31 @@
-<p>
-  planet-detail works!
-</p>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<div class="row" *ngIf="!loading">
+        <div class="col s12 m5">
+        	<img *ngIf="data.image!='/images/no-image.png'" class="z-depth-5" src="{{data.image}}" alt="{{data.name}}">
+        </div> 
+        <div class="col s12 m7">
+        	<header>
+				<h1>{{data.name}}</h1>
+        	</header>
+			<ul class="collection">
+			  <li class="collection-item"><b>Rotation period:</b> {{data.rotation_period}}</li>
+			  <li class="collection-item"><b>Orbital period:</b> {{data.orbital_period}}</li>
+		      <li class="collection-item"><b>Diameter:</b> {{data.diameter}}</li>
+		      <li class="collection-item"><b>Climate:</b> {{data.climate | capitalize}}</li>
+		      <li class="collection-item"><b>Gravity:</b> {{data.gravity | capitalize}}</li>
+		      <li class="collection-item"><b>Surface water:</b> {{data.surface_water | capitalize}}</li>
+		      <li class="collection-item"><b>Population:</b> {{data.population | capitalize}}</li>
+		    </ul>
+		    <ul class="collection with-header" *ngIf="data.residents.length!==0">
+				<li class="collection-header"><h6>Residents</h6></li>
+				<li class="collection-item" *ngFor="let resident of data.residents"><a [routerLink]="resident.url">{{resident.name}}</a></li>
+		    </ul>
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Films</h6></li>
+				<li class="collection-item" *ngFor="let film of data.films"><a [routerLink]="film.url">{{film.title}}</a></li>
+		    </ul>
+        </div>
+    </div>
+	<app-preloader *ngIf="loading"></app-preloader>
+</div>

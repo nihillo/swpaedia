@@ -1,33 +1,27 @@
-<!-- <div class="container"> -->
-	<app-breadcrumbs [path]="'Home/' + title | uppercase"></app-breadcrumbs>
-<!-- 	<div class="container red"> -->
-		<nav>
-		    <div class="nav-wrapper container">
-		      <form>
-		        <div class="input-field">
-		          <input name="search" [(ngModel)]="filter" id="search" type="search" required placeholder="Filter results" value="">
-		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-		          <i class="material-icons">close</i>
-		        </div>
-		      </form>
-		    </div>
-		</nav>
-<!-- 	</div>
- -->	<div class="container container-main">
-		<h1>{{title | capitalize}}</h1>
-		<div class="row">
-			<div *ngFor="let element of elements | search:filter" class="col s12 m6 l3">
-			  	<app-card [image]="element.image" [title]="element.title || element.name" [link]="element.url"></app-card>
-			</div>
-		</div>
-		<app-preloader *ngIf="loading"></app-preloader>
-		<div *ngIf="!loading && !endResults" class="row center-align mg-top mg-bottom">
-			<a (click)="getNextTwoPages()" class="waves-effect waves-light btn-large"><i class="material-icons left">loop</i>Show more</a>
-		</div>
-		<div *ngIf="endResults" class="row center-align mg-top mg-bottom">
-			<span class="end-icon"><img src="{{endIcon}}" alt="No more results"></span>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<h1>{{title | capitalize}}</h1>
+	<nav class="white">
+	    <div class="nav-wrapper">
+	      <form>
+	        <div class="input-field">
+	          <input name="search" [(ngModel)]="filter" id="search" type="search" required placeholder="Filter results" value="">
+	          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+	          <i class="material-icons" (click)="cleanSearch()">close</i>
+	        </div>
+	      </form>
+	    </div>
+	</nav>
+	<div class="row">
+		<div *ngFor="let element of elements | search:filter" class="col s12 m6 l3">
+		  	<app-card [image]="element.image" [title]="element.title || element.name" [link]="element.url"></app-card>
 		</div>
 	</div>
-
-
-<!-- </div> -->
+	<app-preloader *ngIf="loading"></app-preloader>
+	<div *ngIf="!loading && !endResults" class="row center-align mg-top mg-bottom">
+		<a (click)="getNextTwoPages()" class="waves-effect waves-light btn-large"><i class="material-icons left">loop</i>Show more</a>
+	</div>
+	<div *ngIf="endResults" class="row center-align mg-top mg-bottom">
+		<span class="end-icon"><img src="{{endIcon}}" alt="No more results"></span>
+	</div>
+</div>

@@ -1,3 +1,33 @@
-<p>
-  species-detail works!
-</p>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<div class="row" *ngIf="!loading">
+        <div class="col s12 m5">
+        	<img *ngIf="data.image!='/images/no-image.png'" class="z-depth-5" src="{{data.image}}" alt="{{data.name}}">
+        </div> 
+        <div class="col s12 m7">
+        	<header>
+				<h1>{{data.name}}</h1>
+        	</header>
+			<ul class="collection">
+			  <li class="collection-item"><b>Classification:</b> {{data.classification | capitalize}}</li>
+			  <li class="collection-item"><b>Designation:</b> {{data.designation | capitalize}}</li>
+		      <li class="collection-item"><b>Average height:</b> {{data.average_height}}</li>
+		      <li class="collection-item"><b>Skin colors:</b> {{data.skin_colors | capitalize}}</li>
+		      <li class="collection-item"><b>Hair colors:</b> {{data.hair_colors | capitalize}}</li>
+		      <li class="collection-item"><b>Eye colors:</b> {{data.eye_colors| capitalize}}</li>
+		      <li class="collection-item"><b>Average lifespan:</b> {{data.average_lifespan | capitalize}}</li>
+		      <li class="collection-item"><b>Homeworld:</b> <a [routerLink]="data.homeworld.url">{{data.homeworld.name | capitalize}}</a></li>
+		      <li class="collection-item"><b>Language:</b> {{data.language | capitalize}}</li>
+		    </ul>
+		    <ul class="collection with-header" *ngIf="data.people.length!==0">
+				<li class="collection-header"><h6>{{data.name | capitalize}} characters</h6></li>
+				<li class="collection-item" *ngFor="let character of data.people"><a [routerLink]="character.url">{{character.name}}</a></li>
+		    </ul>
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Films</h6></li>
+				<li class="collection-item" *ngFor="let film of data.films"><a [routerLink]="film.url">{{film.title}}</a></li>
+		    </ul>
+        </div>
+    </div>
+	<app-preloader *ngIf="loading"></app-preloader>
+</div>

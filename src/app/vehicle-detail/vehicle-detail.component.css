@@ -1,0 +1,12 @@
+img {
+	width: 100%;
+	// max-height: 100%;
+}
+
+header h1 {
+	margin-bottom: 0;
+}
+
+header h5 {
+	margin-top: 0;
+}

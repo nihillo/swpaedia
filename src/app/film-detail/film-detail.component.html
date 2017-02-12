@@ -1,3 +1,49 @@
-<p>
-  film-detail works!
-</p>
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<div class="container container-main">
+	<div class="row" *ngIf="!loading">
+        <div class="col s12 m5">
+        	<img *ngIf="data.image!='/images/no-image.png'" class="z-depth-5" src="{{data.image}}" alt="{{data.title}}">
+        </div> 
+        <div class="col s12 m7">
+        	<header>
+				<h1>{{data.title}}</h1>
+				<h5>Episode {{data.episode_id}}</h5>
+        	</header>
+			<div>
+				<p class="flow-text">{{data.opening_crawl}}</p>
+			</div>
+			<ul class="collection">
+		      <li class="collection-item"><b>Director:</b> {{data.director}}</li>
+		      <li class="collection-item"><b>Producer</b>: {{data.producer}}</li>
+		      <li class="collection-item"><b>Release date:</b> {{data.release_date | date}}</li>
+		    </ul>
+			<h5>Appearances</h5>
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Characters</h6></li>
+				<li class="collection-item" *ngFor="let character of data.characters"><a [routerLink]="character.url">{{character.name}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Planets</h6></li>
+				<li class="collection-item" *ngFor="let planet of data.planets"><a [routerLink]="planet.url">{{planet.name}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Starships</h6></li>
+				<li class="collection-item" *ngFor="let starship of data.starships"><a [routerLink]="starship.url">{{starship.name}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Vehicles</h6></li>
+				<li class="collection-item" *ngFor="let vehicle of data.vehicles"><a [routerLink]="vehicle.url">{{vehicle.name}}</a></li>
+		    </ul>
+
+		    <ul class="collection with-header">
+				<li class="collection-header"><h6>Species</h6></li>
+				<li class="collection-item" *ngFor="let species of data.species"><a [routerLink]="species.url">{{species.name}}</a></li>
+		    </ul>
+
+        </div>
+    </div>
+	<app-preloader *ngIf="loading"></app-preloader>
+</div>
