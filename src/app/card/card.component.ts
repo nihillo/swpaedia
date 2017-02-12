@@ -10,6 +10,7 @@ export class CardComponent implements OnInit {
 	@Input() title: string;
 	@Input() link: string;
 	@Input() image: string;
+	@Input() linkText: string;
 	private FALLBACK_IMG = app_config.FALLBACK_IMG;
 
 	constructor() {
@@ -19,6 +20,10 @@ export class CardComponent implements OnInit {
 
 		if (this.image === '/images/no-image.png') {
 			this.image = this.FALLBACK_IMG;
+		}
+
+		if (!this.linkText || this.linkText == '') {
+			this.linkText = 'Open detail';
 		}
 	}
 }

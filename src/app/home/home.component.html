@@ -1,3 +1,11 @@
-<p>
-  home works!
-</p>
+<div class="container container-main">
+	<div class="row center-align mg-top">
+		<img src="/assets/images/logo-big-black.png" alt="SWpaedia">
+	</div>
+
+	<div class="row">
+		<div *ngFor="let element of elements | search:filter" class="col s12 m4">
+		  	<app-card [image]="element.image" [title]="element.title || element.name" [link]="element.url" [linkText]="'View'"></app-card>
+		</div>
+	</div>
+</div>
