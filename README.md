@@ -1,6 +1,12 @@
 # SWpaedia
 
-This is an Angular2 web application that shows data about Star Wars universe. It uses [SWpaedia API](https://github.com/nihillo/swpaedia-api) as an intermediate API to retrieve contents from both [SWAPI](https://swapi.co/) and [Wookieepedia](http://starwars.wikia.com/).
+This is an Angular2 web application that shows data about Star Wars universe. It uses [SWpaedia API](https://github.com/nihillo/swpaedia-api) as an intermediate API to retrieve contents from both [SWAPI](https://swapi.co/) and [Wookieepedia](http://starwars.wikia.com/). This intermediate API was built in order to supply missing contents from SWAPI, such as images, and cache their contents to reduce abuse of third peer API requests.
+
+The application is a catalog of informations and technical data, categorized in Films, Characters, Planets, Species, Starships and Vehicles. It uses Angular 2 as an architecture and data processor, and Materialize CSS framework for layout and styles.
+
+## Demo
+
+A working demo can be found at [http://swpaedia.nihillo.es](http://swpaedia.nihillo.es)
 
 
 ## Technologies
