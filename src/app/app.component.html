@@ -1,4 +1,6 @@
-<app-header></app-header>
-<app-preloader *ngIf="loading"></app-preloader>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div [ngClass]="theme">
+	<app-header (propagateTheme)="setTheme($event)"></app-header>
+	<app-preloader *ngIf="loading"></app-preloader>
+	<router-outlet></router-outlet>
+	<app-footer></app-footer>
+</div>

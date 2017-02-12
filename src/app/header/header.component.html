@@ -1,4 +1,4 @@
-<header>
+<header class="navbar-fixed">
 	<nav>
 	    <div class="nav-wrapper container">
 	      <a [routerLink]="'/'" class="brand-logo"><img src="/assets/images/logo-small-white.png" alt="SWpaedia"></a>
@@ -10,6 +10,7 @@
 	        <li><a [routerLink]="'/species'">Species</a></li>
 	        <li><a [routerLink]="'/starships'">Starships</a></li>
 	        <li><a [routerLink]="'/vehicles'">Vehicles</a></li>
+			<li><a class="dropdown-button" data-activates="theme-selector"><i class="material-icons">settings</i></a></li>
 	      </ul>
 	      <ul id="nav-mobile" class="side-nav">
 	        <li><a [routerLink]="'/films'">Films</a></li>
@@ -18,6 +19,21 @@
 	        <li><a [routerLink]="'/species'">Species</a></li>
 	        <li><a [routerLink]="'/starships'">Starships</a></li>
 	        <li><a [routerLink]="'/vehicles'">Vehicles</a></li>
+	      </ul>
+	      <ul id="theme-selector" class="dropdown-content">
+	        <li>Select a theme</li>
+	        <li>
+				<form action="#">
+				    <p>
+				      <input name="theme-selector" (click)="setTheme('jedi');" type="radio" id="theme-selector-jedi" value="jedi" checked/>
+				      <label for="theme-selector-jedi">Jedi</label>
+				    </p>
+				    <p>
+				      <input name="theme-selector" (click)="setTheme('sith');" type="radio" id="theme-selector-sith" value="sith"/>
+				      <label for="theme-selector-sith">Sith</label>
+				    </p>
+				</form>
+	        </li>
 	      </ul>
 	    </div>
   	</nav>

@@ -3,3 +3,73 @@
 	margin-top: 45px;
 	min-height: 100vh;
 }
+
+
+
+/* Themes */ 
+
+.jedi {
+	background-color: white;
+	color: black;
+}
+
+.sith {
+	background-color: black;
+	color: white;
+}
+
+
+.jedi nav {
+	background-color: #1976d2;
+}
+
+.sith nav {
+	background-color: #f44336;
+}
+
+
+.jedi footer {
+	background-color: #1976d2;
+}
+
+.sith footer {
+	background-color: #f44336;
+}
+
+.jedi .btn-large {
+	background-color: #1976d2;
+}
+
+.sith .btn-large {
+	background-color: #f44336;
+}
+
+.jedi a {
+	color: #1976d2;
+}
+
+.sith a {
+	color: #f44336;
+}
+
+nav li>a {
+	color: white!important;
+}
+
+.btn-large {
+	color: white!important;
+}
+
+
+.jedi .logo-big {
+	background-image: url('/assets/images/logo-big-black.png');
+}
+
+.sith .logo-big {
+	background-image: url('/assets/images/logo-big-white.png');
+}
+
+
+.collection {
+	color: black;
+}

@@ -8,8 +8,8 @@ import { RoutesLoaderService} from './routes-loader.service';
   providers: [RoutesLoaderService]
 })
 export class AppComponent  implements OnInit {
-  // public loadingHandler: any;
   public loading: boolean;
+  public theme = 'jedi';
 
   constructor(private routesLoader: RoutesLoaderService) {
   	// this.loadingHandler = routesLoader;
@@ -17,12 +17,16 @@ export class AppComponent  implements OnInit {
   }
 
   ngOnInit() {
-
   	this.routesLoader.loading.subscribe(
   		isLoading => {
   			this.loading = isLoading;
   		}
   	);
+
+  }
+
+  setTheme($event) {
+    this.theme = $event;
 
   }
 }
