@@ -16,12 +16,10 @@ import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.componen
 import { StarshipDetailComponent } from './starship-detail/starship-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CardComponent } from './card/card.component';
-import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { MasterComponent } from './master/master.component';
 import { PreloaderComponent } from './preloader/preloader.component';
 import { CapitalizePipe } from './capitalize.pipe';
 import { SearchPipe } from './search.pipe';
-
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -56,7 +54,6 @@ export const routing = RouterModule.forRoot(routes);
     StarshipDetailComponent,
     NotFoundComponent,
     CardComponent,
-    BreadcrumbsComponent,
     MasterComponent,
     PreloaderComponent,
     PreloaderComponent,

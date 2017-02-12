@@ -1,13 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbsService } from '../breadcrumbs.service';
 
 @Component({
   selector: 'app-film-detail',
   templateUrl: './film-detail.component.html',
   styleUrls: ['./film-detail.component.css'],
-  providers: [GetDataService, BreadcrumbsService]
+  providers: [GetDataService]
 })
 export class FilmDetailComponent implements OnInit, AfterViewInit {
 	private sub: any;
@@ -100,7 +99,6 @@ export class FilmDetailComponent implements OnInit, AfterViewInit {
             });
         });
 
-        // console.log(this.data.characters);
       }
     );
   }

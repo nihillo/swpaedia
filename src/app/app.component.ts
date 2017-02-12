@@ -11,7 +11,9 @@ export class AppComponent  implements OnInit {
   public loading: boolean;
   public theme = 'jedi';
 
-  constructor(private routesLoader: RoutesLoaderService) {
+  constructor(
+    private routesLoader: RoutesLoaderService,
+  ) {
   	// this.loadingHandler = routesLoader;
 
   }

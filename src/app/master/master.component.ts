@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
-import { BreadcrumbsService } from '../breadcrumbs.service';
 import { app_config } from '../../appconfig';
 import { Router } from '@angular/router';
 import {SearchPipe} from '../search.pipe';
@@ -9,7 +8,7 @@ import {SearchPipe} from '../search.pipe';
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css'],
-  providers: [GetDataService, SearchPipe, BreadcrumbsService]
+  providers: [GetDataService, SearchPipe]
 })
 export class MasterComponent implements OnInit {
   private router: any;
@@ -29,7 +28,6 @@ export class MasterComponent implements OnInit {
     private data: GetDataService,
     private _router: Router,
     private applyFilter: SearchPipe,
-    private breadcrumbsHandler: BreadcrumbsService
    ) {
     this.router = _router;
     this.loading = true;

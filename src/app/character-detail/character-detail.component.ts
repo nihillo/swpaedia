@@ -1,13 +1,13 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbsService } from '../breadcrumbs.service';
+
 
 @Component({
   selector: 'app-character-detail',
   templateUrl: './character-detail.component.html',
   styleUrls: ['./character-detail.component.css'],
-  providers: [GetDataService, BreadcrumbsService]
+  providers: [GetDataService]
 })
 export class CharacterDetailComponent implements OnInit, AfterViewInit {
 	private sub: any;
@@ -43,7 +43,7 @@ export class CharacterDetailComponent implements OnInit, AfterViewInit {
       data => {
         this.loading = false;
         this.data = data;
-        console.log(this.data);
+
         this.data.films.forEach(
           (film, index) => {
             this.dataserv.getData(film).subscribe(
@@ -106,7 +106,7 @@ export class CharacterDetailComponent implements OnInit, AfterViewInit {
             };
         });
 
-        // console.log(this.data.characters);
+
       }
     );
   }

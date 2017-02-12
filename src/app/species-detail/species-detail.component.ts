@@ -1,13 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GetDataService } from '../get-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbsService } from '../breadcrumbs.service';
 
 @Component({
   selector: 'app-species-detail',
   templateUrl: './species-detail.component.html',
   styleUrls: ['./species-detail.component.css'],
-  providers: [GetDataService, BreadcrumbsService]
+  providers: [GetDataService]
 })
 export class SpeciesDetailComponent implements OnInit, AfterViewInit {
 	private sub: any;
@@ -76,7 +75,7 @@ export class SpeciesDetailComponent implements OnInit, AfterViewInit {
             };
          });
 
-        console.log(this.data.homeworld);
+
 
         // this.dataserv.getData(this.data.homeworld).subscribe(
         //   planet => {
@@ -116,7 +115,7 @@ export class SpeciesDetailComponent implements OnInit, AfterViewInit {
         //     };
         // });
 
-        // console.log(this.data.planets);
+
       }
     );
   }
